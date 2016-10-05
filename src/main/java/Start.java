@@ -1,4 +1,4 @@
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
 /**
@@ -6,6 +6,7 @@ import org.springframework.context.support.GenericXmlApplicationContext;
  */
 public class Start {
     public static void main(String[] args) {
-        ApplicationContext context = new GenericXmlApplicationContext("context.xml");
+        try (ConfigurableApplicationContext context = new GenericXmlApplicationContext("context.xml")) {
+        }
     }
 }

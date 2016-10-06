@@ -35,18 +35,6 @@ public class ModelT1000 implements Robot {
         System.out.println("ModelT1000 dancing");
     }
 
-    @Override
-    public String toString() {
-        return "ModelT1000{" +
-                "head=" + head +
-                ", hand=" + hand +
-                ", leg=" + leg +
-                ", color='" + color + '\'' +
-                ", year=" + year +
-                ", soundEnabled=" + soundEnabled +
-                '}';
-    }
-
     public Leg getLeg() {
         return leg;
     }
@@ -77,5 +65,13 @@ public class ModelT1000 implements Robot {
 
     public void setSoundEnabled(boolean soundEnabled) {
         this.soundEnabled = soundEnabled;
+    }
+
+    public void init() {
+        System.out.println("init ModelT1000");
+    }
+
+    public void destroy() {
+        System.out.println("destroy ModelT1000");
     }
 }

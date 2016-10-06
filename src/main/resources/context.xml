@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="t1000" class="impls.robot.ModelT1000">
+    <bean id="t1000" class="impls.robot.ModelT1000" init-method="init" destroy-method="destroy" scope="prototype">
         <constructor-arg index="0" ref="sonyHead" type="interfaces.Head"/>
         <constructor-arg index="1" ref="toshibaHand"/>
 

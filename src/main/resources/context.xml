@@ -4,9 +4,14 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="t1000" class="impls.robot.ModelT1000">
-        <constructor-arg index="0" ref="sonyHead"/>
+        <constructor-arg index="0" ref="sonyHead" type="interfaces.Head"/>
         <constructor-arg index="1" ref="toshibaHand"/>
+
         <property name="leg" ref="sonyLeg"/>
+
+        <property name="color" value="red"/>
+        <property name="year" value="2000"/>
+        <property name="soundEnabled" value="false"/>
     </bean>
 
     <bean id="sonyHead" class="impls.sony.SonyHead"/>

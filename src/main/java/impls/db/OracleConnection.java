@@ -1,11 +1,11 @@
 package impls.db;
 
-import interfaces.DBConnection;
+import interfaces.Connection;
 
 /**
  * Created by ramon on 06.10.2016.
  */
-public class OracleConnection implements DBConnection {
+public class OracleConnection implements Connection {
 
     @Override
     public void connect() {

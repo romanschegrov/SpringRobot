@@ -10,4 +10,8 @@ public class SonyHead implements Head {
     public void think() {
         System.out.println("think SonyHead");
     }
+
+    public void init() {
+        System.out.println("SonyHead init");
+    }
 }

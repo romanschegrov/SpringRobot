@@ -15,6 +15,11 @@ public class Start {
 
             t1000 = context.getBean("t1000", Robot.class);
             System.out.println(t1000);
+
+            Robot t2000 = context.getBean("t1001", Robot.class);
+            t2000.dance();
+            t2000.action();
+            System.out.println(t2000);
         }
     }
 }

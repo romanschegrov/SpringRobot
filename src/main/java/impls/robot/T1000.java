@@ -1,46 +1,33 @@
 package impls.robot;
 
-import interfaces.Hand;
-import interfaces.Head;
-import interfaces.Leg;
-import interfaces.Robot;
-
 /**
  * Created by ramon on 06.10.2016.
  */
-public class ModelT1000 implements Robot {
-
-    private Head head;
-    private Hand hand;
-    private Leg leg;
+public class T1000 extends BaseT1000 {
 
     private String color;
     private int year;
     private boolean soundEnabled;
 
-    public ModelT1000(Head head, Hand hand) {
-        this.head = head;
-        this.hand = hand;
-    }
-
     @Override
     public void action() {
-        head.think();
-        hand.wave();
-        leg.go();
+        getHead().think();
+        getHand().wave();
+        getLeg().go();
     }
 
     @Override
     public void dance() {
-        System.out.println("ModelT1000 dancing");
+        System.out.println("T1000 dancing");
     }
 
-    public Leg getLeg() {
-        return leg;
-    }
-
-    public void setLeg(Leg leg) {
-        this.leg = leg;
+    @Override
+    public String toString() {
+        return "T1000{" +
+                "color='" + color + '\'' +
+                ", year=" + year +
+                ", soundEnabled=" + soundEnabled +
+                '}';
     }
 
     public String getColor() {
@@ -68,10 +55,10 @@ public class ModelT1000 implements Robot {
     }
 
     public void init() {
-        System.out.println("init ModelT1000");
+        System.out.println("init T1000");
     }
 
     public void destroy() {
-        System.out.println("destroy ModelT1000");
+        System.out.println("destroy T1000");
     }
 }

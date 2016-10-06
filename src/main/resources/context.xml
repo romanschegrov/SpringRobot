@@ -6,15 +6,36 @@
     <import resource="sony.xml"/>
     <import resource="toshiba.xml"/>
 
-    <bean id="t1000" class="impls.robot.ModelT1000" init-method="init" destroy-method="destroy" scope="prototype" depends-on="oracleConnection">
-        <constructor-arg index="0" ref="sonyHead" type="interfaces.Head"/>
-        <constructor-arg index="1" ref="toshibaHand"/>
-
+    <bean id="baseModel" class="impls.robot.BaseT1000" abstract="true">
+        <property name="head" ref="sonyHead"/>
+        <property name="hand" ref="toshibaHand"/>
         <property name="leg" ref="sonyLeg"/>
+    </bean>
+
+    <bean id="t1000"
+          class="impls.robot.T1000"
+          init-method="init"
+          destroy-method="destroy"
+          scope="prototype"
+          depends-on="oracleConnection"
+          parent="baseModel">
 
         <property name="color" value="red"/>
         <property name="year" value="2000"/>
         <property name="soundEnabled" value="false"/>
+    </bean>
+
+    <bean id="t1001"
+          class="impls.robot.T1000"
+          init-method="init"
+          destroy-method="destroy"
+          scope="prototype"
+          depends-on="oracleConnection"
+          parent="baseModel">
+
+        <property name="color" value="green"/>
+        <property name="year" value="1999"/>
+        <property name="soundEnabled" value="true"/>
     </bean>
 
     <bean id="oracleConnection" class="impls.db.OracleConnection" init-method="connect"/>

@@ -1,4 +1,4 @@
-import impls.robot.ModelT1000;
+import interfaces.Robot;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
@@ -8,8 +8,9 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 public class Start {
     public static void main(String[] args) {
         try (ConfigurableApplicationContext context = new GenericXmlApplicationContext("context.xml")) {
-            ModelT1000 t1000 = context.getBean("t1000", ModelT1000.class);
+            Robot t1000 = context.getBean("t1000", Robot.class);
             t1000.dance();
+            t1000.action();
         }
     }
 }

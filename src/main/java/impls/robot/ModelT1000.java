@@ -14,17 +14,13 @@ public class ModelT1000 implements Robot {
     private Hand hand;
     private Leg leg;
 
-    public ModelT1000() {
-    }
-
-    public ModelT1000(Head head, Hand hand, Leg leg) {
+    public ModelT1000(Head head, Hand hand) {
         this.head = head;
         this.hand = hand;
-        this.leg = leg;
     }
 
     @Override
-    public void fire() {
+    public void action() {
         head.think();
         hand.wave();
         leg.go();
@@ -33,5 +29,13 @@ public class ModelT1000 implements Robot {
     @Override
     public void dance() {
         System.out.println("ModelT1000 dancing");
+    }
+
+    public Leg getLeg() {
+        return leg;
+    }
+
+    public void setLeg(Leg leg) {
+        this.leg = leg;
     }
 }

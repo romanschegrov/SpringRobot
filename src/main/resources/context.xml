@@ -10,8 +10,18 @@
 
     <bean id="baseModel" class="impls.robot.BaseT1000" abstract="true">
         <property name="head" ref="sonyHead"/>
-        <property name="hand" ref="toshibaHand"/>
-        <property name="leg" ref="sonyLeg"/>
+        <property name="hands">
+            <map>
+                <entry key="left" value-ref="toshibaHand"/>
+                <entry key="right" value-ref="sonyHand"/>
+            </map>
+        </property>
+        <property name="legs">
+            <map>
+                <entry key="left" value-ref="sonyLeg"/>
+                <entry key="right" value-ref="toshibaLeg"/>
+            </map>
+        </property>
     </bean>
 
     <bean id="t1000"

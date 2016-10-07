@@ -12,8 +12,10 @@ public class T1000 extends BaseT1000 {
     @Override
     public void action() {
         getHead().think();
-        getHand().wave();
-        getLeg().go();
+        getHands().get("left").wave();
+        getHands().get("right").wave();
+        getLegs().get("left").go();
+        getLegs().get("right").go();
     }
 
     @Override

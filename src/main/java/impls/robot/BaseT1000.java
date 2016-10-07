@@ -5,31 +5,24 @@ import interfaces.Head;
 import interfaces.Leg;
 import interfaces.Robot;
 
+import java.util.Map;
+
 /**
  * Created by ramon on 06.10.2016.
  */
 public abstract class BaseT1000 implements Robot {
 
     private Head head;
-    private Hand hand;
-    private Leg leg;
+    private Map<String,Hand> hands;
+    private Map<String,Leg> legs;
 
     public BaseT1000() {
     }
 
-    public BaseT1000(Head head, Hand hand, Leg leg) {
+    public BaseT1000(Head head, Map<String, Hand> hands, Map<String, Leg> legs) {
         this.head = head;
-        this.hand = hand;
-        this.leg = leg;
-    }
-
-    @Override
-    public String toString() {
-        return "BaseT1000{" +
-                "head=" + head +
-                ", hand=" + hand +
-                ", leg=" + leg +
-                '}';
+        this.hands = hands;
+        this.legs = legs;
     }
 
     public Head getHead() {
@@ -40,19 +33,19 @@ public abstract class BaseT1000 implements Robot {
         this.head = head;
     }
 
-    public Hand getHand() {
-        return hand;
+    public Map<String, Hand> getHands() {
+        return hands;
     }
 
-    public void setHand(Hand hand) {
-        this.hand = hand;
+    public void setHands(Map<String, Hand> hands) {
+        this.hands = hands;
     }
 
-    public Leg getLeg() {
-        return leg;
+    public Map<String, Leg> getLegs() {
+        return legs;
     }
 
-    public void setLeg(Leg leg) {
-        this.leg = leg;
+    public void setLegs(Map<String, Leg> legs) {
+        this.legs = legs;
     }
 }

@@ -17,9 +17,9 @@ public class Start {
 
             RobotFactory robotFactory = context.getBean("t1000Factory", RobotFactory.class);
             System.out.println(robotFactory);
-            System.out.println(robotFactory.newRobot());
-            System.out.println(robotFactory.newRobot());
-            System.out.println(robotFactory.newRobot());
+            Robot robot = robotFactory.newRobot();
+            System.out.println(robot);
+            robot.action();
         }
     }
 }

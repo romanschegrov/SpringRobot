@@ -24,7 +24,8 @@ public class T1000 extends BaseT1000 {
     @Override
     public String toString() {
         return "T1000{" +
-                "color='" + color + '\'' +
+                "hashCode=" + hashCode() +
+                ", color='" + color + '\'' +
                 ", year=" + year +
                 ", soundEnabled=" + soundEnabled +
                 '}';

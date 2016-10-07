@@ -6,6 +6,8 @@
     <import resource="sony.xml"/>
     <import resource="toshiba.xml"/>
 
+    <bean id="oracleConnection" class="impls.db.OracleConnection" init-method="connect"/>
+
     <bean id="baseModel" class="impls.robot.BaseT1000" abstract="true">
         <property name="head" ref="sonyHead"/>
         <property name="hand" ref="toshibaHand"/>
@@ -38,6 +40,8 @@
         <property name="soundEnabled" value="true"/>
     </bean>
 
-    <bean id="oracleConnection" class="impls.db.OracleConnection" init-method="connect"/>
+    <bean id="t1000Factory" class="impls.factory.T1000Factory" scope="singleton">
+        <lookup-method name="newRobot" bean="t1000"/>
+    </bean>
 
 </beans>

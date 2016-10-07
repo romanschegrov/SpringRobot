@@ -1,4 +1,5 @@
 import interfaces.Robot;
+import interfaces.RobotFactory;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
@@ -8,18 +9,17 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 public class Start {
     public static void main(String[] args) {
         try (ConfigurableApplicationContext context = new GenericXmlApplicationContext("context.xml")) {
-            Robot t1000 = context.getBean("t1000", Robot.class);
-            t1000.dance();
-            t1000.action();
-            System.out.println(t1000);
+//            Robot t1000 = context.getBean("t1000", Robot.class);
+//            System.out.println(t1000);
+//
+//            Robot t1001 = context.getBean("t1001", Robot.class);
+//            System.out.println(t1001);
 
-            t1000 = context.getBean("t1000", Robot.class);
-            System.out.println(t1000);
-
-            Robot t2000 = context.getBean("t1001", Robot.class);
-            t2000.dance();
-            t2000.action();
-            System.out.println(t2000);
+            RobotFactory robotFactory = context.getBean("t1000Factory", RobotFactory.class);
+            System.out.println(robotFactory);
+            System.out.println(robotFactory.newRobot());
+            System.out.println(robotFactory.newRobot());
+            System.out.println(robotFactory.newRobot());
         }
     }
 }
